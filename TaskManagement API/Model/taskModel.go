@@ -9,5 +9,5 @@ type Task struct {
 	Title       string     `json:"title"`
 	Description string     `json:"description"`
 	Status      WorkStatus `json:"status"`
-	Deadline    time.Time  `json:"-"`
+	Deadline    time.Time  `json:"deadline"`
 }

@@ -50,12 +50,12 @@ func UpdateTask(c *gin.Context) {
 		return
 	}
 
-	for _, task := range Data.Tasks {
+	for i, task := range Data.Tasks {
 		if task.ID == updatedTask.ID {
-			task.Status = updatedTask.Status
-			//task.Deadline = updatedTask.Deadline
-			task.Description = updatedTask.Description
-			task.Title = updatedTask.Title
+			Data.Tasks[i].Status = updatedTask.Status
+			Data.Tasks[i].Description = updatedTask.Description
+			Data.Tasks[i].Title = updatedTask.Title
+			Data.Tasks[i].Deadline = updatedTask.Deadline
 			c.IndentedJSON(http.StatusOK, gin.H{"message": "Task updated successfully"})
 			return
 		}
