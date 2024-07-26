@@ -12,7 +12,7 @@ func main() {
 	router.GET("/:id", Controller.GetTaskByID)
 	router.POST("/", Controller.CreateTask)
 	router.PUT("/", Controller.UpdateTask)
-	router.DELETE("/", Controller.DeleteTask)
+	router.DELETE("/:id", Controller.DeleteTask)
 	err := router.Run("localhost:8080")
 	if err != nil {
 		return
